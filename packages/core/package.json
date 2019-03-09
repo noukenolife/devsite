@@ -1,0 +1,26 @@
+{
+  "name": "@devsite/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "j-yamamoto <j-yamamoto@onu.edu>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.122",
+    "jest": "^24.3.1"
+  }
+}
