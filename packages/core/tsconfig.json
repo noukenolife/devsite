@@ -1,15 +1,16 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "lib",
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ]
     }
   },
   "include": [
-    "./src/**/*.ts"
+    "src/**/*.ts",
+    "__tests__/**/*.ts"
   ]
 }
