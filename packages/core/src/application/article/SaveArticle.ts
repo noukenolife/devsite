@@ -1,7 +1,7 @@
-import IArticleRepository from "@/domain/article/IArticleRepository";
-import ISaveArticleInput from "@/application/article/ISaveArticleInput";
-import ArticleId from "@/domain/article/ArticleId";
-import Article from "@/domain/article/Article";
+import ISaveArticleInput from '@/application/article/ISaveArticleInput';
+import Article from '@/domain/article/Article';
+import ArticleId from '@/domain/article/ArticleId';
+import IArticleRepository from '@/domain/article/IArticleRepository';
 
 export default class SaveArticle {
   protected _articleRepo: IArticleRepository;

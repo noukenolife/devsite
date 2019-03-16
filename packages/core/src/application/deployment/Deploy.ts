@@ -1,4 +1,4 @@
-import IDeployer from "@/ports/deployment/IDeployer";
+import IDeployer from '@/ports/deployment/IDeployer';
 
 export default class Deploy {
   protected _deployer: IDeployer;

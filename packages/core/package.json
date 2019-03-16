@@ -14,7 +14,9 @@
     "lib"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "tslint ./src/**/*.ts ./__tests__/**/*.ts --project ../../tsconfig.json",
+    "lint:fix": "tslint ./src/**/*.ts ./__tests__/**/*.ts --project ../../tsconfig.json --fix"
   },
   "dependencies": {
     "fast-deep-equal": "^2.0.1",

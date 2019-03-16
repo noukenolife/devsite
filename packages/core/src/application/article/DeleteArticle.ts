@@ -1,6 +1,6 @@
-import IArticleRepository from "@/domain/article/IArticleRepository";
-import IDeleteArticleInput from "@/application/article/IDeleteArticleInput";
-import ArticleId from "@/domain/article/ArticleId";
+import IDeleteArticleInput from '@/application/article/IDeleteArticleInput';
+import ArticleId from '@/domain/article/ArticleId';
+import IArticleRepository from '@/domain/article/IArticleRepository';
 
 export default class DeleteArticle {
   protected _articleRepo: IArticleRepository;
