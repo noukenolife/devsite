@@ -1,6 +1,6 @@
-import IDeleteArticleInput from '@/application/article/IDeleteArticleInput';
 import ArticleId from '@/domain/article/ArticleId';
 import IArticleRepository from '@/domain/article/IArticleRepository';
+import { DeleteArticleIO } from '@/application/article/DeleteArticleIO';
 
 export default class DeleteArticle {
   protected _articleRepo: IArticleRepository;
@@ -9,7 +9,7 @@ export default class DeleteArticle {
     this._articleRepo = articleRepo;
   }
 
-  public async invoke(input: IDeleteArticleInput): Promise<void> {
+  public async invoke(input: DeleteArticleIO.IDeleteArticleInput): Promise<void> {
     return this._articleRepo.remove(new ArticleId(input.id));
   }
 }

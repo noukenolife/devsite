@@ -1,9 +1,9 @@
-import IUpdateArticleTagsInput from '@/application/article/IUpdateArticleTagsInput';
 import ArticleId from '@/domain/article/ArticleId';
 import ArticleTag from '@/domain/article/ArticleTag';
 import IArticleTagRepository from '@/domain/article/IArticleTagRepository';
 import IArticleTagNormalizer from '@/ports/article/IArticleTagNormalizer';
 import * as _ from 'lodash';
+import { UpdateArticleTagsIO } from '@/application/article/UpdateArticleTagsIO';
 
 export default class UpdateArticleTags {
   protected _articleTagRepo: IArticleTagRepository;
@@ -14,7 +14,7 @@ export default class UpdateArticleTags {
     this._tagNormalizer = tagNormalizer;
   }
 
-  public async invoke(input: IUpdateArticleTagsInput): Promise<void> {
+  public async invoke(input: UpdateArticleTagsIO.IUpdateArticleTagsInput): Promise<void> {
     const articleId = new ArticleId(input.articleId);
 
     const oldTags: { id: string, value: string; normalized: string; }[] =
