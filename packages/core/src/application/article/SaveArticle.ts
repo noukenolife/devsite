@@ -1,7 +1,7 @@
-import ISaveArticleInput from '@/application/article/ISaveArticleInput';
 import Article from '@/domain/article/Article';
 import ArticleId from '@/domain/article/ArticleId';
 import IArticleRepository from '@/domain/article/IArticleRepository';
+import { SaveArticleIO } from '@/application/article/SaveArticleIO';
 
 export default class SaveArticle {
   protected _articleRepo: IArticleRepository;
@@ -10,7 +10,9 @@ export default class SaveArticle {
     this._articleRepo = articleRepo;
   }
 
-  public async invoke(input: ISaveArticleInput): Promise<void> {
+  public async invoke(
+    input: SaveArticleIO.ISaveArticleInput,
+  ): Promise<SaveArticleIO.ISaveArticleOutput> {
     let articleToSave;
 
     if (input.id) {
@@ -25,6 +27,8 @@ export default class SaveArticle {
       articleToSave = new Article(articleId, input.title, input.content);
     }
 
-    return this._articleRepo.save(articleToSave);
+    await this._articleRepo.save(articleToSave);
+
+    return { id: articleToSave.id.value };
   }
 }
