@@ -1,6 +1,6 @@
-import ArticleId from "@/domain/article/ArticleId";
-import Entity from "@/domain/support/Entity";
-import ArticleTagId from "@/domain/article/ArticleTagId";
+import ArticleId from '@/domain/article/ArticleId';
+import ArticleTagId from '@/domain/article/ArticleTagId';
+import Entity from '@/domain/support/Entity';
 
 export default class ArticleTag extends Entity<ArticleTagId> {
   protected _articleId: ArticleId;

@@ -1,5 +1,5 @@
-import Id from "@/domain/support/Id";
-import Entity from "@/domain/support/Entity";
+import Entity from '@/domain/support/Entity';
+import Id from '@/domain/support/Id';
 
 export default interface IRepository<ID extends Id<any>, E extends Entity<ID>> {
   nextId(): Promise<ID>;

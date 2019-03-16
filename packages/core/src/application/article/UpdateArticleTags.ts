@@ -1,9 +1,9 @@
-import * as _ from "lodash";
-import IArticleTagRepository from "@/domain/article/IArticleTagRepository";
-import IUpdateArticleTagsInput from "@/application/article/IUpdateArticleTagsInput";
-import ArticleId from "@/domain/article/ArticleId";
-import IArticleTagNormalizer from "@/ports/article/IArticleTagNormalizer";
-import ArticleTag from "@/domain/article/ArticleTag";
+import IUpdateArticleTagsInput from '@/application/article/IUpdateArticleTagsInput';
+import ArticleId from '@/domain/article/ArticleId';
+import ArticleTag from '@/domain/article/ArticleTag';
+import IArticleTagRepository from '@/domain/article/IArticleTagRepository';
+import IArticleTagNormalizer from '@/ports/article/IArticleTagNormalizer';
+import * as _ from 'lodash';
 
 export default class UpdateArticleTags {
   protected _articleTagRepo: IArticleTagRepository;
@@ -19,12 +19,16 @@ export default class UpdateArticleTags {
 
     const oldTags: { id: string, value: string; normalized: string; }[] =
       (await this._articleTagRepo.findByArticleId(articleId))
-        .map(tag => {
-          return { id: tag.id.value, value: tag.value, normalized: this._tagNormalizer.normalize(tag.value) }
+        .map((tag) => {
+          return {
+            id: tag.id.value,
+            value: tag.value,
+            normalized: this._tagNormalizer.normalize(tag.value),
+          };
         });
 
     const newTags: { value: string; normalized: string; }[] =
-      input.tags.map(tag => {
+      input.tags.map((tag) => {
         return { value: tag, normalized: this._tagNormalizer.normalize(tag) };
       });
 
@@ -38,10 +42,10 @@ export default class UpdateArticleTags {
       _.differenceWith(newTags, oldTags, (newTag: { value: string }, oldTag: { value: string }) => {
           return newTag.value === oldTag.value;
         })
-        .map(async tag => {
+        .map(async (tag) => {
           const id = await this._articleTagRepo.nextId();
           return new ArticleTag(id, articleId, tag.value);
-        })
+        }),
     );
 
     await this._articleTagRepo.removeAll(tagsToRemove);
