@@ -1,9 +1,9 @@
-import Entity from '@/domain/support/Entity';
-import Id from '@/domain/support/Id';
-import IRepository from '@/domain/support/IRepository';
+import { Entity } from '@/domain/support/Entity';
+import { Id } from '@/domain/support/Id';
+import { IRepository } from '@/domain/support/IRepository';
 import equal from 'fast-deep-equal';
 
-export default abstract class InMemoryRepository<ID extends Id<any>, E extends Entity<ID>>
+export abstract class InMemoryRepository<ID extends Id<any>, E extends Entity<ID>>
   implements IRepository<ID, E> {
 
   public _entities: E[];

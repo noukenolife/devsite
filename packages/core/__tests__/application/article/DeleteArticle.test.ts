@@ -1,7 +1,7 @@
-import DeleteArticle from '@/application/article/DeleteArticle';
-import Article from '@/domain/article/Article';
-import ArticleId from '@/domain/article/ArticleId';
-import InMemoryArticleRepository from '../../adapters/article/InMemoryArticleRepository';
+import { DeleteArticle } from '@/application/article/DeleteArticle';
+import { Article } from '@/domain/article/Article';
+import { ArticleId } from '@/domain/article/ArticleId';
+import { InMemoryArticleRepository } from '../../adapters/article/InMemoryArticleRepository';
 
 describe('DeleteArticle', () => {
   it('deletes an article', async () => {

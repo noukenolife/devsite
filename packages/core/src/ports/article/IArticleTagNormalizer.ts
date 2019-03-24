@@ -1,3 +1,3 @@
-export default interface IArticleTagNormalizer {
+export interface IArticleTagNormalizer {
   normalize(tag: string): string;
 }

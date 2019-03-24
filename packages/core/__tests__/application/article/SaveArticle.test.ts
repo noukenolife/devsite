@@ -1,7 +1,7 @@
-import SaveArticle from '@/application/article/SaveArticle';
-import InMemoryArticleRepository from '../../adapters/article/InMemoryArticleRepository';
-import Article from '@/domain/article/Article';
-import ArticleId from '@/domain/article/ArticleId';
+import { SaveArticle } from '@/application/article/SaveArticle';
+import { InMemoryArticleRepository } from '../../adapters/article/InMemoryArticleRepository';
+import { Article } from '@/domain/article/Article';
+import { ArticleId } from '@/domain/article/ArticleId';
 
 describe('SaveArticle', () => {
   it('saves a new article', async () => {

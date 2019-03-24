@@ -1,9 +1,9 @@
-import Article from '@/domain/article/Article';
-import ArticleId from '@/domain/article/ArticleId';
-import IArticleRepository from '@/domain/article/IArticleRepository';
-import { SaveArticleIO } from '@/application/article/SaveArticleIO';
+import { Article } from '@/domain/article/Article';
+import { ArticleId } from '@/domain/article/ArticleId';
+import { IArticleRepository } from '@/domain/article/IArticleRepository';
+import { ISaveArticleInput, ISaveArticleOutput } from '@/application/article/SaveArticleIO';
 
-export default class SaveArticle {
+export class SaveArticle {
   protected _articleRepo: IArticleRepository;
 
   public constructor(articleRepo: IArticleRepository) {
@@ -11,8 +11,8 @@ export default class SaveArticle {
   }
 
   public async invoke(
-    input: SaveArticleIO.ISaveArticleInput,
-  ): Promise<SaveArticleIO.ISaveArticleOutput> {
+    input: ISaveArticleInput,
+  ): Promise<ISaveArticleOutput> {
     let articleToSave;
 
     if (input.id) {
