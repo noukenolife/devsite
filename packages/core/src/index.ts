@@ -1,7 +1,9 @@
-import * as article from './application/article';
-import * as deployment from './application/deployment';
+import * as application from './application';
+import * as domain from './domain';
+import * as ports from './ports';
 
 export {
-  article,
-  deployment,
+  application,
+  domain,
+  ports,
 };
