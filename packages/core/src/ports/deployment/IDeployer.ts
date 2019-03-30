@@ -1,3 +1,3 @@
-export default interface IDeployer {
+export interface IDeployer {
   deploy(): Promise<void>;
 }

@@ -1,6 +1,6 @@
-import Entity from '@/domain/support/Entity';
-import Id from '@/domain/support/Id';
-import InMemoryRepository from './InMemoryRepository';
+import { Entity } from '@/domain/support/Entity';
+import { Id } from '@/domain/support/Id';
+import { InMemoryRepository } from './InMemoryRepository';
 
 class TestId extends Id<number> {}
 

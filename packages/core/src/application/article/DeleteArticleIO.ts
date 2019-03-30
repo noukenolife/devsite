@@ -1,5 +1,3 @@
-export module DeleteArticleIO {
-  export interface IDeleteArticleInput {
-    id: string;
-  }
+export interface IDeleteArticleInput {
+  id: string;
 }

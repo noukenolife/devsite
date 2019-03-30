@@ -1,7 +1,7 @@
-import ArticleId from '@/domain/article/ArticleId';
-import Entity from '@/domain/support/Entity';
+import { ArticleId } from '@/domain/article/ArticleId';
+import { Entity } from '@/domain/support/Entity';
 
-export default class Article extends Entity<ArticleId> {
+export class Article extends Entity<ArticleId> {
   protected _title: string;
   protected _content: string;
   protected _createdAt: Date;

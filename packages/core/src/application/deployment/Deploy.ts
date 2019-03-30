@@ -1,6 +1,6 @@
-import IDeployer from '@/ports/deployment/IDeployer';
+import { IDeployer } from '@/ports/deployment/IDeployer';
 
-export default class Deploy {
+export class Deploy {
   protected _deployer: IDeployer;
 
   public constructor(deployer: IDeployer) {

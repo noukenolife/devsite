@@ -1,6 +1,6 @@
-import Id from '@/domain/support/Id';
+import { Id } from '@/domain/support/Id';
 
-export default class Entity<ID extends Id<any>> {
+export class Entity<ID extends Id<any>> {
   protected _id: ID;
   public constructor(id: ID) {
     this._id = id;

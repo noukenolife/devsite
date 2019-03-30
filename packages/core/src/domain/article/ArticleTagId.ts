@@ -1,4 +1,4 @@
-import Id from '@/domain/support/Id';
+import { Id } from '@/domain/support/Id';
 
-export default class ArticleTagId extends Id<string> {
+export class ArticleTagId extends Id<string> {
 }

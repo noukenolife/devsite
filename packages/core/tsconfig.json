@@ -4,13 +4,17 @@
     "outDir": "lib",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+      "@/*": ["src/*"]
+    },
+    "declarationDir": "types",
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths",
+        "exclude": ["*"]
+      }
+    ]
   },
   "include": [
-    "src/**/*.ts",
-    "__tests__/**/*.ts"
+    "src/**/*.ts"
   ]
 }

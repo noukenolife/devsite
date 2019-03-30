@@ -1,4 +1,4 @@
-export default class Id<V> {
+export class Id<V> {
   protected _value: V;
   public constructor(value: V) {
     this._value = value;
