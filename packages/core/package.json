@@ -5,16 +5,21 @@
   "author": "j-yamamoto <j-yamamoto@onu.edu>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/index.ts",
+  "main": "lib/index.common.js",
+  "module": "lib/index.esm.js",
+  "typings": "types/index.d.ts",
+  "unpkg": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "scripts": {
     "test": "jest",
+    "build": "rollup -c ../../rollup.config.js",
     "lint": "tslint ./src/**/*.ts ./__tests__/**/*.ts --project ../../tsconfig.json",
     "lint:fix": "tslint ./src/**/*.ts ./__tests__/**/*.ts --project ../../tsconfig.json --fix"
   },

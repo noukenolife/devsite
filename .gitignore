@@ -1,5 +1,7 @@
 lerna-debug.log
 npm-debug.log
 packages/*/lib
+packages/*/types
 .idea
+.rpt2_cache
 node_modules
