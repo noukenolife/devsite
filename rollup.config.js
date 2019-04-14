@@ -15,11 +15,6 @@ export default {
     {
       file: pkg.module,
       format: 'es'
-    },
-    {
-      file: pkg.unpkg,
-      name: pkg.name,
-      format: 'umd'
     }
   ],
   external: [
@@ -35,4 +30,3 @@ export default {
     resolve()
   ]
 };
-
