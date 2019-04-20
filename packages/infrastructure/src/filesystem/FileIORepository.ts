@@ -25,7 +25,7 @@ export abstract class FileIORepository
         { encoding: this._options.encoding },
         (err, data) => {
           if (err) {
-            reject(err);
+            err.code === 'ENOENT' ? resolve(undefined) : reject(err);
           } else {
             resolve(this._converter.toEntity(JSON.parse(data)));
           }
@@ -54,7 +54,11 @@ export abstract class FileIORepository
       fs.unlink(
         path.resolve(this._options.dir, `${id.value}.json`),
         (err) => {
-          if (err) { reject(err); } else { resolve(); }
+          if (err) {
+            reject(err.code === 'ENOENT' ? new domain.support.EntityNotFound() : err);
+          } else {
+            resolve();
+          }
         });
     });
   }

@@ -1,7 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import Router from 'express-promise-router';
 import path from 'path';
-import {Request, Response} from 'express-serve-static-core';
+import {saveArticleAction} from './article/actions/saveArticleAction';
+import {deleteArticleAction} from './article/actions/deleteArticleAction';
+import {errorHandler} from './errorHandler';
 
 const app = express();
 
@@ -10,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
-const apiRouter = express.Router();
-apiRouter.post('/articles', (req: Request, res: Response) => {
-  res.status(200).send({});
-});
+const apiRouter = Router();
+apiRouter.post('/articles', saveArticleAction);
+apiRouter.delete('/articles/:id', deleteArticleAction);
+apiRouter.use(errorHandler);
 
 app.use('/api', apiRouter);
 

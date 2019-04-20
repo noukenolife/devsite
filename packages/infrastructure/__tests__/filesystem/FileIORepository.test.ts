@@ -66,7 +66,7 @@ describe('FileIORepository', () => {
 
   it('remove the entity by the id', async () => {
     await repository.remove(id);
-    return expect(repository.findById(id)).rejects.toThrow();
+    return expect(repository.findById(id)).resolves.toBe(undefined);
   });
 
   const id1 = new TestId('1');
@@ -85,9 +85,9 @@ describe('FileIORepository', () => {
 
   it('remove all the entities by ids', async () => {
     await repository.removeAll([id1, id2, id3]);
-    await expect(repository.findById(id1)).rejects.toThrow();
-    await expect(repository.findById(id2)).rejects.toThrow();
-    await expect(repository.findById(id3)).rejects.toThrow();
+    await expect(repository.findById(id1)).resolves.toBe(undefined);
+    await expect(repository.findById(id2)).resolves.toBe(undefined);
+    await expect(repository.findById(id3)).resolves.toBe(undefined);
   });
 
 });

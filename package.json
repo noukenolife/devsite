@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "ui": "lerna exec --scope @devsite/ui -- npm run serve",
+    "api": "lerna exec --scope @devsite/ui -- npm start",
     "test": "lerna exec -- npm run test"
   },
   "devDependencies": {
