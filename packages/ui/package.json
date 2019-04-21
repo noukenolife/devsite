@@ -19,7 +19,7 @@
     "test": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "start": "ts-node -O '{\"module\": \"commonjs\"}' ./api/index.ts"
+    "start": "ts-node-dev -O '{\"module\": \"commonjs\"}' ./api/index.ts"
   },
   "dependencies": {
     "@devsite/core": "^0.0.0",
@@ -44,7 +44,7 @@
     "babel-core": "7.0.0-bridge.0",
     "body-parser": "^1.18.3",
     "ts-jest": "^23.0.0",
-    "ts-node": "^8.0.3",
+    "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.2.1",
     "vue-template-compiler": "^2.5.21"
   }
