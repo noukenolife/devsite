@@ -34,7 +34,7 @@ export class FileIOArticleListQuery implements application.article.IArticleListQ
       items: items.map((item) => {
         return {
           title: item.title,
-          summary: item.summary,
+          content: item.content,
           updatedAt: item.updatedAt,
         } as application.article.IArticleListItem;
       }),

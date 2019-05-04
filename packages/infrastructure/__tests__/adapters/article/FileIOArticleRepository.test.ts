@@ -36,7 +36,7 @@ describe('FileIOArticleRepository', () => {
       items: [{
         id: entity.id.value,
         title: entity.title,
-        summary: entity.content,
+        content: entity.content,
         createdAt: entity.createdAt.toISOString(),
         updatedAt: entity.updatedAt.toISOString(),
       }],
@@ -63,7 +63,7 @@ describe('FileIOArticleRepository', () => {
       items: [{
         id: entity.id.value,
         title: entity.title,
-        summary: entity.content,
+        content: entity.content,
         createdAt: entity.createdAt.toISOString(),
         updatedAt: entity.updatedAt.toISOString(),
       }],

@@ -11,21 +11,21 @@ describe('FileIOArticleListQuery', () => {
       {
         id: '1',
         title: 'Article Title 1',
-        summary: 'Article Summary 1',
+        content: 'Article Summary 1',
         createdAt: new Date('2019-05-03T00:00:00.000Z').toISOString(),
         updatedAt: new Date('2019-05-03T00:00:00.000Z').toISOString(),
       },
       {
         id: '2',
         title: 'Article Title 2',
-        summary: 'Article Summary 2',
+        content: 'Article Summary 2',
         createdAt: new Date('2019-05-03T01:00:00.000Z').toISOString(),
         updatedAt: new Date('2019-05-03T01:00:00.000Z').toISOString(),
       },
       {
         id: '3',
         title: 'Article Title 3',
-        summary: 'Article Summary 3',
+        content: 'Article Summary 3',
         createdAt: new Date('2019-05-03T01:00:00.000Z').toISOString(),
         updatedAt: new Date('2019-05-03T01:00:00.000Z').toISOString(),
       },
@@ -55,7 +55,7 @@ describe('FileIOArticleListQuery', () => {
       count: 2,
       items: items.map(item => ({
         title: item.title,
-        summary: item.summary,
+        content: item.content,
         updatedAt: item.updatedAt,
       }) as application.article.IArticleListItem).slice(0, 2),
     } as application.article.IArticleList);
@@ -71,7 +71,7 @@ describe('FileIOArticleListQuery', () => {
       count: 2,
       items: items.map(item => ({
         title: item.title,
-        summary: item.summary,
+        content: item.content,
         updatedAt: item.updatedAt,
       }) as application.article.IArticleListItem).slice(1, 3),
     } as application.article.IArticleList);
