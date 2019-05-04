@@ -6,6 +6,7 @@ import { ArticleFileConverter } from '@/respository/article/ArticleFileConverter
 import { IArticleMetaFile } from '@/respository/article/IArticleMetaFile';
 import { FileNotFoundException } from '@/filesystem/FileNotFoundException';
 import { IArticleMetaItem } from '@/respository/article/IArticleMetaItem';
+import { markdownToPlainText } from '@/utils/markdownToPlainText';
 
 export class FileIOArticleRepository
   extends FileIORepository<domain.article.ArticleId, domain.article.Article, IArticleFile>
@@ -33,7 +34,7 @@ export class FileIOArticleRepository
     const item = {
       id: entity.id.value,
       title: entity.title,
-      summary: entity.content,
+      content: markdownToPlainText(entity.content),
       createdAt: entity.createdAt.toISOString(),
       updatedAt: entity.updatedAt.toISOString(),
     } as IArticleMetaItem;

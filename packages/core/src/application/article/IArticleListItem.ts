@@ -1,5 +1,5 @@
 export interface IArticleListItem {
   title: string;
-  summary: string;
+  content: string;
   updatedAt: string;
 }
