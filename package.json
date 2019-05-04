@@ -4,6 +4,7 @@
   "scripts": {
     "ui": "lerna exec --scope @devsite/ui -- npm run serve",
     "api": "lerna exec --scope @devsite/ui -- npm start",
+    "build": "lerna exec -- npm run build",
     "test": "lerna exec -- npm run test"
   },
   "devDependencies": {

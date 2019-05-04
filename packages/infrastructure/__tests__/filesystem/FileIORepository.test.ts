@@ -5,6 +5,7 @@ import * as uuid from 'uuid';
 import { IFileConverter } from '@/filesystem/IFileConverter';
 import { IFileIOOptions } from '@/filesystem/IFileIOOptions';
 import * as path from 'path';
+import {FileIO} from '../../src/filesystem/FileIO';
 
 class TestId extends domain.support.Id<string> {
 }
@@ -54,7 +55,7 @@ describe('FileIORepository', () => {
     dir: path.resolve(__dirname, './'),
   };
 
-  const repository = new TestFileIORepository(options);
+  const repository = new TestFileIORepository(new FileIO(options));
 
   const id = new TestId('1');
   const entity = new TestEntity(id, 'Test');

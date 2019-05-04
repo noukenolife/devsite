@@ -1,4 +1,4 @@
-import {Request, Response} from 'express-serve-static-core';
+import {Request, Response} from 'express';
 import {deleteArticle} from '../../provider';
 import {application} from '@devsite/core';
 

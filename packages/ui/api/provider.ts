@@ -1,9 +1,9 @@
 import {application, domain} from '@devsite/core';
-import {adapters} from '@devsite/infrastructure';
 import * as path from 'path';
+import {adapters} from '@devsite/infrastructure';
 
 export const articleRepository: domain.article.IArticleRepository =
-  new adapters.article.ArticleFileIORepository({
+  new adapters.article.FileIOArticleRepository({
     dir: path.resolve(__dirname, '../public'),
     encoding: 'utf8',
   });

@@ -1,17 +1,17 @@
-import { ArticleFileConverter } from '@/respository/article/ArticleFileConverter';
 import { domain } from '@devsite/core';
-import { ArticleFile } from '@/respository/article/ArticleFile';
+import { IArticleFile } from '@/respository/article/IArticleFile';
+import { ArticleFileConverter } from '@/respository/article/ArticleFileConverter';
 
 describe('ArticleFileConverter', () => {
   const converter = new ArticleFileConverter();
 
-  const file: ArticleFile = new ArticleFile(
-    '1',
-    'Test Title',
-    'Test Content',
-    new Date().toISOString(),
-    new Date().toISOString(),
-  );
+  const file: IArticleFile = {
+    id: '1',
+    title: 'Test Title',
+    content: 'Test Content',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
 
   const entity: domain.article.Article = new domain.article.Article(
     new domain.article.ArticleId(file.id),
