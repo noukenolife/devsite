@@ -1,12 +1,14 @@
 import {application, domain} from '@devsite/core';
 import * as path from 'path';
-import {adapters} from '@devsite/infrastructure';
+import {adapters, filesystem} from '@devsite/infrastructure';
+
+const fileIO: filesystem.FileIO = new filesystem.FileIO({
+  dir: path.resolve(__dirname, '../public'),
+  encoding: 'utf8',
+});
 
 export const articleRepository: domain.article.IArticleRepository =
-  new adapters.article.FileIOArticleRepository({
-    dir: path.resolve(__dirname, '../public'),
-    encoding: 'utf8',
-  });
+  new adapters.article.FileIOArticleRepository(fileIO);
 
 export const saveArticle: application.article.SaveArticle =
   new application.article.SaveArticle(articleRepository);
