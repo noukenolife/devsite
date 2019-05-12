@@ -24,8 +24,10 @@
   "dependencies": {
     "@devsite/core": "^0.0.0",
     "@devsite/infrastructure": "^0.0.0",
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "express-promise-router": "^3.0.3",
+    "mavon-editor": "^2.7.4",
     "vue": "^2.6.6",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
@@ -43,9 +45,15 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "body-parser": "^1.18.3",
+    "bulma": "^0.7.4",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "ts-jest": "^23.0.0",
     "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.2.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuex-module-decorators": "^0.9.8"
   }
 }

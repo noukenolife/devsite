@@ -20,8 +20,8 @@ describe('FileIOArticleRepository', () => {
     const id = new domain.article.ArticleId('1');
     const entity = new domain.article.Article(
       id,
-      'Article Title',
-      'Article Content',
+      'ArticleModule Title',
+      'ArticleModule Content',
       new Date(),
       new Date(),
     );
@@ -47,8 +47,8 @@ describe('FileIOArticleRepository', () => {
     const id = new domain.article.ArticleId('1');
     const entity = new domain.article.Article(
       id,
-      'Article Title',
-      'Article Content',
+      'ArticleModule Title',
+      'ArticleModule Content',
       new Date(),
       new Date(),
     );

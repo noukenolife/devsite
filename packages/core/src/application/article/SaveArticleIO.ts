@@ -5,4 +5,6 @@ export interface ISaveArticleInput {
 }
 export interface ISaveArticleOutput {
   id: string;
+  createdAt: string;
+  updatedAt: string;
 }

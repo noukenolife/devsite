@@ -17,10 +17,10 @@ export class FileIOArticleListQuery implements application.article.IArticleListQ
 
     if (criteria.sortBy === 'updatedAt') {
       items = items.sort((a, b) => {
-        if (criteria.order instanceof application.support.Desc) {
+        if (criteria.order === application.support.Orders.DESC) {
           return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
         }
-        if (criteria.order instanceof application.support.Asc) {
+        if (criteria.order === application.support.Orders.ASC) {
           return new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime();
         }
         return 0;
@@ -33,6 +33,7 @@ export class FileIOArticleListQuery implements application.article.IArticleListQ
       count: items.length,
       items: items.map((item) => {
         return {
+          id: item.id,
           title: item.title,
           content: item.content,
           updatedAt: item.updatedAt,

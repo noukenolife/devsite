@@ -29,6 +29,10 @@ export class SaveArticle {
 
     await this._articleRepo.save(articleToSave);
 
-    return { id: articleToSave.id.value };
+    return {
+      id: articleToSave.id.value,
+      createdAt: articleToSave.createdAt.toISOString(),
+      updatedAt: articleToSave.updatedAt.toISOString(),
+    };
   }
 }

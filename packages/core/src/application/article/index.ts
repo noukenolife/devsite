@@ -2,6 +2,8 @@ export * from './DeleteArticle';
 export * from './DeleteArticleIO';
 export * from './SaveArticle';
 export * from './SaveArticleIO';
+export * from './IArticle';
+export * from './IArticleByIdQuery';
 export * from './IArticleList';
 export * from './IArticleListCriteria';
 export * from './IArticleListItem';
