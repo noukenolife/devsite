@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="container">
     <button class="button is-primary" type="button" @click="createNewArticle()">新規作成</button>
     <ArticleCardList></ArticleCardList>
   </main>
