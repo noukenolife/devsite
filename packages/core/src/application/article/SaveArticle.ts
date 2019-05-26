@@ -15,16 +15,18 @@ export class SaveArticle {
   ): Promise<ISaveArticleOutput> {
     let articleToSave;
 
+    const title = input.title || 'No Title';
+
     if (input.id) {
       articleToSave = await this._articleRepo.findById(new ArticleId(input.id));
       if (!(articleToSave instanceof Article)) {
         throw Error(); // TODO: Create a custom error class
       } else {
-        articleToSave.update(input.title, input.content);
+        articleToSave.update(title, input.content);
       }
     } else {
       const articleId = await this._articleRepo.nextId();
-      articleToSave = new Article(articleId, input.title, input.content);
+      articleToSave = new Article(articleId, title, input.content);
     }
 
     await this._articleRepo.save(articleToSave);
