@@ -24,7 +24,7 @@
   import {mapState} from 'vuex';
   import {IRootState} from '@/store';
   import {getArticleById, saveArticle} from "@/di/provider";
-  import MarkdownEditor from '@/ui/article/components/MarkdownEditor.vue';
+  import MarkdownEditor from '@/ui/article/molecules/MarkdownEditor.vue';
   import {Route} from 'vue-router';
 
   @Component({
