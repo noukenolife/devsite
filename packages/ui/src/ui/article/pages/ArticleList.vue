@@ -12,8 +12,8 @@
   import {articleModule} from "@/store/modules/article/ArticleModule";
   import {mapState} from 'vuex';
   import {IRootState} from "@/store";
-  import ArticleCardList from '@/ui/article/containers/ArticleCardList.vue';
-  import ArticleCard from '@/ui/article/components/ArticleCard.vue';
+  import ArticleCardList from '@/ui/article/organisms/ArticleCardList.vue';
+  import ArticleCard from '@/ui/article/organisms/ArticleCard.vue';
 
   @Component({
     components: {ArticleCardList, ArticleCard},

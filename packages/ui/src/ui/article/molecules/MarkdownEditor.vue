@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <mavon-editor
-      class="mavon-editor"
-      v-model="_value"
-      language="en"
-      @save="save()">
-    </mavon-editor>
-  </div>
+  <mavon-editor
+    class="mavon-editor"
+    v-model="_value"
+    language="en"
+    @save="save()">
+  </mavon-editor>
 </template>
 
 <script lang="ts">

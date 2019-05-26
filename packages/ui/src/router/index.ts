@@ -15,6 +15,11 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/sandbox',
+      name: 'sandbox',
+      component: () => import(/* webpackChunkName: "sandbox" */ '../ui/style/pages/Sandbox.vue'),
+    },
+    {
       path: '/articles',
       name: 'articleList',
       component: () => import(/* webpackChunkName: "articleList" */ '../ui/article/pages/ArticleList.vue'),
